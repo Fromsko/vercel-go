@@ -1,0 +1,35 @@
+### BaseURL
+@base_url=http://localhost:8080
+
+### Register
+POST {{base_url}}/register
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+### Login
+POST {{base_url}}/login
+
+{
+    "username": "admin",
+    "password": "admin"
+}
+
+### Products
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNzQ4NTE2NDc2fQ.vasjVngjMknPHXaguj1cM8AzKKjliXohdDNL9KlsEFM
+
+GET {{base_url}}/api/products
+Authorization: Bearer {{token}}
+
+
+### Create Products
+POST {{base_url}}/api/products
+Authorization: Bearer {{token}}
+
+{
+    "name": "xxx",
+    "description": "xxx",
+    "price": 200
+}
