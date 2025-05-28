@@ -14,6 +14,10 @@ func RegisterMiddleware(engine *gin.Engine) {
 }
 
 func Setup(engine *gin.Engine) {
+	// default
+	engine.GET("/", func(ctx *gin.Context) {
+		ctx.String(http.StatusOK, "server is running!")
+	})
 	// notfound
 	{
 		engine.NoRoute(handler.NotFoundHandler)
